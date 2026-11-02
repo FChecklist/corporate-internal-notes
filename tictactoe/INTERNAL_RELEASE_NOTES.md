@@ -11,11 +11,13 @@ Corporate Tic Tac Toe is the team tournament game: players are placed on a board
 | Cloudflare Pages project | `corporate-tic-tac-toe` |
 | GitHub repository | `FChecklist/corporate-tic-tac-toe` (public) |
 | Branch holding the latest release work | `feat/tictactoe-wording-pass2-2026-11-01` (tip at the time of writing: `7e4f912`) |
-| What is live now | Commit `7e4f912`, deployment `99bb1e46-204b-4405-9b76-8b6bc6f976b9` (1 Nov 2026 21:42 IST), re-deployed 23:59 IST as `cf036f06-8500-4e3b-9a09-a6c08e892bf5`. Confirmed by the Cloudflare list and by version.json (commit 7e4f91208373, dirty false). Release-list version 1.3.1. |
+| What is live now | Commit `4b37bf3`, deployment `05f7a0e0-...` (2 Nov 2026 10:51 IST), read from the Cloudflare list. Release-list version 1.3.1. |
 
 ## Release table (newest first, since 31 Oct 2026)
 | Date and time (IST) | Version | Commit | Cloudflare deployment id | Rollback id (the live one before it) | Tests and exceptions |
 |---|---|---|---|---|---|
+| 02 Nov 2026 10:51 | 1.3.1* | `4b37bf3` | `05f7a0e0-30fe-4ea1-a609-80943bc652fb` | `f4c1a710-840d-4e7a-8f0a-77c5428627fb` | Same build, no code change: only the shared owner password was set (Tambola's ORGANIZER_SECRET) so one password opens /paytest and /api/owner/* on all six games. Checked after deploy: shared password 200, wrong or no password 404, version.json equals the commit, mode LIVE, noindex present, /paytest 200. |
+| 02 Nov 2026 09:11 | 1.3.1* | `4b37bf3` | `f4c1a710-840d-4e7a-8f0a-77c5428627fb` | `cf036f06-8500-4e3b-9a09-a6c08e892bf5` | Design pass: two columns on laptops, 44 px taps, darker Refer and earn text, cache v11. Full partner run r95: 2357 pass, 0 fail. |
 | 01 Nov 2026 23:59 | 1.3.1* | `7e4f912` | `cf036f06-8500-4e3b-9a09-a6c08e892bf5` | `99bb1e46-204b-4405-9b76-8b6bc6f976b9` | Same build as the deployment before it, redeployed only to add the GOOGLE_CLIENT_ID setting (Google sign-in stays dormant on game pages: the owner switched it off in code on 23 Oct 2026; it is live on the console). version.json unchanged. No new tests. |
 | 01 Nov 2026 21:42 | 1.3.1* | `7e4f912` | `99bb1e46-204b-4405-9b76-8b6bc6f976b9` | `63999bb6-2a4e-4696-9252-ec16759443a6` | Partner full run on this exact commit: 2,357 pass / 0 fail. Live checks: version.json 7e4f91208373, hide files present, built robots Disallow /, no sitemap, noindex on every page, no 'internal note' words in the output, all pages 200. GitHub push of 7e4f912 was done later the same night. |
 | 01 Nov 2026 09:27 | 1.3.1* | `fc177f6` | `63999bb6-2a4e-4696-9252-ec16759443a6` | `8cb1146f-96f1-47d4-a4a4-8cc394f5cbaf` | Hide-from-search release (noindex tag, X-Robots-Tag header, robots.txt Disallow all, no sitemap). A private-site test pins it. Full-run count not recorded in the handover (unverified). |

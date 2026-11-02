@@ -11,11 +11,13 @@ Corporate Luck by Chance is the dice game for company teams: every player rolls 
 | Cloudflare Pages project | `corporate-luck-by-chance` |
 | GitHub repository | `FChecklist/corporate-luck-by-chance` (public) |
 | Branch holding the latest release work | `feat/luck-wording-2026-11-01` (tip at the time of writing: `bf86f4d`) |
-| What is live now | Commit `bf86f4d`, deployment `ff5b36f6-ab42-4d79-a56c-ea1c9cd65510` (1 Nov 2026 21:49 IST), re-deployed 2 Nov 00:02 IST as `c1d46912-c056-49d3-87d1-24af9ba576b7`. Confirmed by the Cloudflare list and by version.json (commit bf86f4da10e1, dirty false). Release-list version 1.3.0. |
+| What is live now | Commit `eab061f`, deployment `b4985a78-...` (2 Nov 2026 10:56 IST), read from the Cloudflare list. Release-list version 1.3.0. |
 
 ## Release table (newest first, since 31 Oct 2026)
 | Date and time (IST) | Version | Commit | Cloudflare deployment id | Rollback id (the live one before it) | Tests and exceptions |
 |---|---|---|---|---|---|
+| 02 Nov 2026 10:56 | 1.3.0* | `eab061f` | `b4985a78-4b0a-412c-bf5a-46cd06c892ed` | `634b627b-4d58-401c-ab99-039511e7ad78` | Same build, no code change: only the shared owner password was set (Tambola's ORGANIZER_SECRET) so one password opens /paytest and /api/owner/* on all six games. Checked after deploy: shared password 200, wrong or no password 404, version.json equals the commit, mode LIVE, noindex present, /paytest 200. |
+| 02 Nov 2026 09:04 | 1.3.0* | `eab061f` | `634b627b-4d58-401c-ab99-039511e7ad78` | `c1d46912-c056-49d3-87d1-24af9ba576b7` | Design pass: two columns on laptops, header gradient contrast, 44 px logo. Full partner run r93: 1680 pass, 0 fail. |
 | 02 Nov 2026 00:02 | 1.3.0* | `bf86f4d` | `c1d46912-c056-49d3-87d1-24af9ba576b7` | `ff5b36f6-ab42-4d79-a56c-ea1c9cd65510` | Same build as the deployment before it, redeployed only to add the GOOGLE_CLIENT_ID setting (Google sign-in stays dormant on game pages: the owner switched it off in code on 23 Oct 2026; it is live on the console). version.json unchanged. No new tests. |
 | 01 Nov 2026 21:49 | 1.3.0* | `bf86f4d` | `ff5b36f6-ab42-4d79-a56c-ea1c9cd65510` | `e4c3e95c-5f64-45fc-a1c0-d998a62d8f53` | Partner full run on this exact commit: 1,680 pass / 0 fail. Live checks: version.json bf86f4da10e1, hide files present, built robots Disallow /, no sitemap file, noindex tag on every page, X-Robots-Tag, all pages 200. Odd: /sitemap.xml still answered 200 from the edge cache (an old copy; with a query string it is 404). |
 | 01 Nov 2026 09:38 | 1.3.0* | `9d4d17c` | `e4c3e95c-5f64-45fc-a1c0-d998a62d8f53` | `56d26c90-c9ab-4403-bf13-56b812105ff2` | Hide-from-search release (noindex tag, X-Robots-Tag header, robots.txt Disallow all, no sitemap). A private-site test pins it. Full-run count not recorded in the handover (unverified). |

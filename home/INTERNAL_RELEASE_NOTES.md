@@ -11,7 +11,7 @@ The home site is the one public website of the family: what the games are, who t
 | Cloudflare Pages project | `corporatetambola-home` |
 | GitHub repository | `FChecklist/corporate-home` (public) |
 | Branch holding the latest release work | `release/home-2026-11-01 (worktree `C:\ct\test-sites\wt-home-rel`)` (tip at the time of writing: `e3d367d`) |
-| What is live now | Commit `e3d367d`, deployment `95ff2563-...` (2 Nov 2026 01:41 IST). Confirmed by the Cloudflare list and by a live fetch of version.json (commit e3d367d9b39d66a4b20d764bed43097ba6a442fa, dirty false, built 00:58 IST). The apex and www answer a permanent redirect (301) to home.corporatetambola.com (checked about 01:45 IST). This site has no version number; the commit is the identifier. |
+| What is live now | Commit `b8b9fc2`, deployment `11f72250-...` (2 Nov 2026 10:17 IST), read from the Cloudflare list. The apex and www answer 301 to home.corporatetambola.com. No version number; the commit is the identifier. |
 
 ## Rules that hold for the whole family (as decided by the owner)
 - One public site: home.corporatetambola.com. The game sites are not listed in search (noindex in the page, in the headers and in robots.txt) but open by link. One master console, one engine. No feature deleted.
@@ -26,6 +26,8 @@ The home site is the one public website of the family: what the games are, who t
 ## Release table (newest first, since 31 Oct 2026)
 | Date and time (IST) | Version | Commit | Cloudflare deployment id | Rollback id (the live one before it) | Tests and exceptions |
 |---|---|---|---|---|---|
+| 02 Nov 2026 10:17 | none | `b8b9fc2` | `11f72250-3e43-479a-922a-89aa6924e5c2` | `fd7310d2-2c4f-4bb6-8c23-f0d83a096dbe` | Top-bar tagline under Corporate Games on all 12 pages (owner wording: Closed-group games for teams anywhere and their families: bonding, fun, your message and your brand.). Test limits changed with dated comments: words T09 1710 to 1725 (real 1724), top-bar height 80 to 90 px. Brand link has no aria-label (an aria-label fails axe label-content-name-mismatch). First full run had 2 failing cases, both fixed; released after the clean re-run (exact check count not recorded). |
+| 02 Nov 2026 09:10 | none | `c005f50` | `fd7310d2-2c4f-4bb6-8c23-f0d83a096dbe` | `95ff2563-6249-4694-85b8-4084780dc43c` | Owner-approved wording: ID answer in the HR, IT and Legal questions; compliance bullets (no personal data asked, no advertising trackers). Word limit 1700 to 1710. Full browser run on this tree: 15 cases, 1871 checks, 0 failed. |
 | 02 Nov 2026 01:41 | none | `e3d367d` | `95ff2563-6249-4694-85b8-4084780dc43c` | `ccc38f8d-7d4d-4b28-9368-5772479adb2a` | Full browser test: 15 cases, 1,871 checks, 0 failed (boss note; commit b5b1a03 says 1,870 checks at source ec8b0fc: a difference of one check, unverified which is exact). Earlier light checks: no-address 40, wording-links 80, cache 9, gamesbar checksum. Released 2 Nov 01:41 IST, after the 01:30 snapshot. Live checks (fetch about 01:45 IST): version.json commit e3d367d9b39d; corporatetambola.com and www.corporatetambola.com answer 301 to home.corporatetambola.com; /terms answers 200. |
 | 01 Nov 2026 09:49 | none | `709f1d7` | `ccc38f8d-7d4d-4b28-9368-5772479adb2a` | `6f31d7a5-f6c8-4336-8d1f-7c68db220130` | Cache-versioning test 9 checks, 0 failed. Preview only before: production was 709f1d7. |
 | 01 Nov 2026 00:04 | none | `9bfcf3e` | `6f31d7a5-f6c8-4336-8d1f-7c68db220130` | `8e9681cd-b091-49f8-bccc-ea3fdffcbf92` | Cache safety release; cache-versioning test 9 checks, 0 failed. |
